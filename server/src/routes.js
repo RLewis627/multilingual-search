@@ -2,6 +2,7 @@ const GetQuery = require('./controllers/GetQuery')
 const GetResults = require('./controllers/GetResults')
 const PostRelevance = require('./controllers/PostRelevance')
 const PostDemographic = require('./controllers/PostDemographic')
+const PostTestResult = require('./controllers/PostTestResult')
 const Authentication = require('./controllers/Authentication.js')
 const GetQuestions = require('./controllers/GetQuestions.js')
 const PostQuestionnaire = require('./controllers/PostQuestionnaire.js')
@@ -34,5 +35,7 @@ module.exports = (app) => {
   app.post('/page',
     Page.postPage)
   app.post('/pageUpdate',
-    Page.updatePage)
+    Page.updatePage),
+  app.post('/testresult',
+    PostTestResult.postTestResult)
 }

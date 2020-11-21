@@ -11,7 +11,8 @@ import Questionnaire2 from '@/components/Questionnaire-2'
 import newQ1 from '@/components/newQ1'
 import quest from '@/components/Question'
 import postQuestion from '@/components/PostQuestion'
-import base from '@/components/base'
+import SpanishTest from '@/components/SpanishSkillTest'
+import ChineseTest from '@/components/ChineseSkillTest'
 
 Vue.use(Router)
 
@@ -61,9 +62,14 @@ export default new Router({
       component: Query
     },
     {
-      path: '/base',
-      name: 'base',
-      component: base
+      path: '/SPNTest',
+      name: 'Spanish Test',
+      component: SpanishTest
+    },
+    {
+      path: '/CHNTest',
+      name: 'Chinese Test',
+      component: ChineseTest
     }
   ]
 })

@@ -62,6 +62,7 @@ CREATE TABLE `Demographic` (
   `FirstLanguage` varchar(20) NOT NULL,
   `English` int(11) NOT NULL,
   `Secondary` int(11) NOT NULL,
+  `Residence` varchar(30) NOT NULL,
   `Origin` varchar(30) NOT NULL,
   `Age` int(11) NOT NULL,
   `Experience` int(11) NOT NULL,
@@ -80,6 +81,32 @@ CREATE TABLE `Demographic` (
 LOCK TABLES `Demographic` WRITE;
 /*!40000 ALTER TABLE `Demographic` DISABLE KEYS */;
 /*!40000 ALTER TABLE `Demographic` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `TestResult`
+--
+
+DROP TABLE IF EXISTS `TestResult`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `TestResult` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `userID` int(11) NOT NULL,
+  `SkillLevel` int(11) NOT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `TestResult`
+--
+
+LOCK TABLES `TestResult` WRITE;
+/*!40000 ALTER TABLE `TestResult` DISABLE KEYS */;
+/*!40000 ALTER TABLE `TestResult` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

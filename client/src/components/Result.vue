@@ -2,7 +2,7 @@
   <v-container fluid grid-list-xl pt-1 px-0>
     <v-layout row align-left v-if="getID" :key="qID">
       <v-flex xs4 d-flex offset-xs4>
-        <ul>
+        <ul class="resultPage">
           <li v-for="(result, index) in results" :key="result.title">
             <!-- <div>{{result.id}}</div> -->
             <div class="title">
@@ -145,11 +145,28 @@ export default {
 </script>
 
 <style scoped>
+  .resultPage {
+    padding-left: 0px;
+    max-width: 100%;
+  }
+  .flex.xs4 {
+    max-width: 100%;
+    margin-left: 5px;
+  }
+  .d-flex.offset-xs4 {
+    margin-left: 5px;
+    padding-left: 0px;
+  }
+  .container {
+    text-align: center;
+  }
   ul {
     list-style-type: none;
+    max-width: 100%;
   }
   li {
-    margin-bottom: 18px
+    margin-bottom: 18px;
+    max-width: 100%;
   }
   div {
     text-align: left
@@ -162,14 +179,14 @@ export default {
   div.url {
     color: green;
     white-space: nowrap;
-    width: 600px;
+    width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 16px
   }
   div.title {
     color: blue;
-    width: 600px;
+    width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -177,5 +194,11 @@ export default {
   }
   div.myButton {
     max-height: 48px;
+  }
+  @media only screen and (max-width: 1160px) {
+    .flex.offset-xs4 {
+      margin-left: 5px;
+      margin-top: 55px;
+    }
   }
 </style>

@@ -144,7 +144,7 @@ export default {
         [27, 28, 26, 29, 25, 30, 24, 1, 23, 2, 22, 3, 21, 4, 20, 5, 19, 6, 18, 7, 17, 8, 16, 9, 15, 10, 14, 11, 13, 12],
         [28, 29, 27, 30, 26, 1, 25, 2, 24, 3, 23, 4, 22, 5, 21, 6, 20, 7, 19, 8, 18, 9, 17, 10, 16, 11, 15, 12, 14, 13],
         [29, 30, 28, 1, 27, 2, 26, 3, 25, 4, 24, 5, 23, 6, 22, 7, 21, 8, 20, 9, 19, 10, 18, 11, 17, 12, 16, 13, 15, 14],
-        [30, 1, 29, 2, 28, 3, 27, 4, 26, 5, 25, 6, 24, 7, 23, 8, 22, 9, 21, 10, 20, 11, 19, 12, 18, 13, 17, 14, 16, 15]
+        [30, 1, 29, 2, 28, 3, 27, 4, 26, 5, 25, 6, 24, 7, 23, 8, 22, 9, 21, 10, 20, 11, 19, 12, 18, 13, 17, 14, 16, 15],
       ]
       var userIndex = this.$store.getters.getUID % 30
       var query = id
@@ -155,14 +155,30 @@ export default {
 </script>
 
 <style scoped>
+  .container {
+    text-align: left;
+  }
+  .d-flex.offset-xs4 {
+    max-width: 100%;
+    margin-left: 5px;
+    padding-left: 0px;
+  }
   .query {
     max-height: 80px;
-    /* height: 60px; */
+    height: 60px;
   }
   .desc {
     max-height: 30px;
   }
   .v-list-tile {
     max-height: 40px;
+  }
+  @media only screen and (max-width: 1160px) {
+    .desc {
+      margin-bottom: 35px;
+      margin-top: 5px;
+      text-align: left;
+      margin-left: 5px;
+    }
   }
 </style>

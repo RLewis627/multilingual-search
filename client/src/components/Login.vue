@@ -1,7 +1,7 @@
 <template>
   <v-layout row wrap>
     <v-flex xs4 offset-xs4>
-      <h2> Register</h2>
+      <h2>Register</h2>
       <div class="alert alert-danger" v-if="error">
         <p>{{ error }}</p>
       </div>
@@ -80,4 +80,10 @@ export default {
 </script>
 
 <style scoped>
+  h2 {
+    text-align: center;
+  }
+  .v-btn {
+    margin-left: inherit;
+  }
 </style>

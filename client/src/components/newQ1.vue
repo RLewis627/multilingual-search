@@ -38,6 +38,15 @@
               </v-radio-group>
             </li>
             <li>
+              <p align="left">What is your current country of residence?</p>
+              <v-select
+                :items="countries"
+                label='Select Country'
+                v-model="reside"
+                :rules="[v => !!v || 'Please select a country']"
+                ></v-select>
+            </li>
+            <li>
               <p align="left">What is your country of origin?</p>
               <v-select
                 :items="countries"
@@ -94,6 +103,7 @@ export default {
       radio1: null,
       radio2: null,
       radio3: null,
+      reside: null,
       origin: null,
       questions: [],
       age: null,
@@ -166,13 +176,15 @@ export default {
   // },
   methods: {
     async Continue () {
-      var secondary = this.$store.state.language ? 'Chinese' : 'Spanish'
-      var lang = ['English', secondary, 'Both']
+      var secondaryLang = this.$store.getters.getLanguage
+      var lang = ['English', secondaryLang, 'Both']
+      console.log('This is the value of secondary: ' + secondaryLang)
       var toPost = {
         userID: this.$store.getters.getUID,
         firstLanguage: lang[this.radio1 - 1],
         englishProf: parseInt(this.radio2),
         secondary: parseInt(this.radio3),
+        reside: this.reside,
         origin: this.origin,
         age: parseInt(this.age),
         experience: parseInt(this.experience)
@@ -180,7 +192,12 @@ export default {
       var response = (await QueryService.demographic(toPost)).status
 
       if (response === 200) {
-        this.$router.push('/base')
+        if (secondaryLang == 'Spanish') {
+          this.$router.push('/SPNTest')
+        }
+        if (secondaryLang == 'Chinese') {
+          this.$router.push('/CHNTest')
+        }
       }
     }
   }

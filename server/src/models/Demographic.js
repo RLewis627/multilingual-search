@@ -31,6 +31,11 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       field: 'Secondary'
     },
+    reside: {
+      type: DataTypes.STRING(30),
+      allowNull: false,
+      field: 'Residence'
+    },
     origin: {
       type: DataTypes.STRING(30),
       allowNull: false,

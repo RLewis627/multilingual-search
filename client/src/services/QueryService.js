@@ -33,5 +33,8 @@ export default {
   },
   pageUpdate (value) {
     return Api().post('pageUpdate', value)
+  },
+  testresult (value) {
+    return Api().post('testresult', value)
   }
 }

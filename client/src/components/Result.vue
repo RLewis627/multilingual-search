@@ -151,10 +151,10 @@ export default {
   }
   .flex.xs4 {
     max-width: 100%;
-    margin-left: 5px;
+    margin-left: 50px;
   }
   .d-flex.offset-xs4 {
-    margin-left: 5px;
+    margin-left: 50px;
     padding-left: 0px;
   }
   .container {
